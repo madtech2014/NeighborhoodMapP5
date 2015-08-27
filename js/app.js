@@ -313,7 +313,7 @@ var ViewModel = function () {
 	]
     var mapOptions = {
       center: { lat: self.lat(), lng: self.lng()},
-      zoom: 10,
+      zoom: 18,
       mapTypeId: google.maps.MapTypeId.ROADMAP,
       streetViewControl: true,
       zoomControl: true,

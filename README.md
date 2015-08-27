@@ -7,6 +7,8 @@ markers also supplied by Fourscore via AJAX requests.
 
 Access to Map Application will be via:
 
+	http://htmlpreview.github.io/?https://github.com/madtech2014/NeighborhoodMapP5/blob/master/index.html
+
 
 Tools and Resources Utilized include:
 
