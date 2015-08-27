@@ -1,59 +1,48 @@
-/* Neighborhood Map App
+/* Projo5_Neighborhood Map
  *
- * Loads Google Map and Foursquare 'venues' from asynch AJAX requests
- * Allows user to change city, select different categories of venues and see more info for each venue on click events
- *
+ * Application allows visitor to access Google Map choose location and venues using Foursquare 
+ * User will be able to make map type choices as well as venue catagories and obtain more information on venues by clicking icons
  */
-// Global Variables
+var CLIENT_ID = "5B0HOZHGVVSMFTIXXGMRMZRAZ3NV20H2LJJ1E35IEOJMUTN0";
+var CLIENT_SECRET = "O4F5DYQQ21YC40UEAJFKBOLAL2AHJU5CQC2RP00MWNV3OIPN";
+var GOOGLE_KEY = "AIzaSyDTYSjuoZcmdc_12MTieNOK2gmHsdb3PBo";
 
-var placesModel = [];
-
-// Foursquare default catagories added here:
-
-var fsCategories = [
-  { "name": "Restaurants",
+// Choices from catagory hierarchy foursquare website: https://developer.foursquare.com/categorytree
+  var fsCategories = [
+  {"name": "Hotel",
+    "id": "4bf58dd8d48988d1fa931735"
+  }, {
+    "name": "Restaurants",
     "id" : "4d4b7105d754a06374d81259"
   }, {
     "name": "Airport",
     "id": "4bf58dd8d48988d1ed931735"
   }, {
-    "name": "Coffee",
-    "id": "4bf58dd8d48988d1e0931735"
-  }, {
-    "name": "Food Trucks",
-    "id": "4bf58dd8d48988d1cb941735"
-  }, {
-    "name": "Breweries",
-    "id": "50327c8591d4c4b30a586d5d"
-  }, {
-    "name": "Museums",
-    "id": "4bf58dd8d48988d181941735"
-  }, {
-    "name": "Universities",
-    "id": "4d4b7105d754a06372d81259"
-  }, {
-    "name": "Hotel",
-    "id": "4bf58dd8d48988d1fa931735"
-  }, {
-    "name": "Outdoors",
-    "id": "4d4b7105d754a06377d81259"
-  }, {
-    "name": "Stadiums",
-    "id": "4bf58dd8d48988d184941735"
+    "name": "Gas Stations",
+    "id": "4bf58dd8d48988d113951735"
   }, {
     "name": "Shopping",
     "id": "4d4b7105d754a06378d81259"
   }, {
-    "name": "Zoo",
-    "id": "4bf58dd8d48988d17b941735"
+    "name": "Movie Theatre",
+    "id": "4bf58dd8d48988d17f941735"
+  }, {
+    "name": "Colleges & Universities",
+    "id": "4d4b7105d754a06372d81259"
+  }, {
+    "name": "Arts & Entertainment",
+    "id": "4d4b7104d754a06370d81259"
+  }, {
+    "name": "Gym & Fitness",
+    "id": "4bf58dd8d48988d175941735"
+  }, {
+    "name": "Medical Centers",
+    "id": "4bf58dd8d48988d104941735"
   }
 ];
-var GOOGLE_KEY = "AIzaSyDTYSjuoZcmdc_12MTieNOK2gmHsdb3PBo";
-var CLIENT_ID = "MUKBUW43YPMWUS2HKDZQZW4VYLT5B1HHST20VR5K35WAKFVC";
-var CLIENT_SECRET = "5I1RMLBOLDC1QXU5IJN4VLC2E1N2G1JIGB3QUG5FTAZO4CFM";
 
 // MAPVIEW
-//make map global, set default location(Lawrenceville, GA), define an array for Ajax/json requests
+//Make map global, set default location(Lawrenceville, GA), define an array for Ajax/json requests
 var ViewModel = function () {
   var self = this;
     self.map = null;
