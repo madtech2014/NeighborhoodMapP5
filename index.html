@@ -6,85 +6,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title> - Big AL's - Neighborhood Map</title>
 		<link rel="stylesheet" href="css/style.css">
+		
 		<style>
-			@font-face {
-			  font-family: 'Playfair Display';
-			  font-style: italic;
-			  font-weight: 400;
-			  src: local('Playfair Display Italic'), local('PlayfairDisplay-Italic'), url(http://fonts.gstatic.com/s/playfairdisplay/v10/9MkijrV-dEJ0-_NWV7E6NwXiAI3F8adTt8b-_w2WoPM.woff2) format('woff2');
-			}
-			@font-face {
-			  font-family: 'Playfair Display';
-			  font-style: italic;
-			  font-weight: 700;
-			  src: local('Playfair Display Bold Italic'), local('PlayfairDisplay-BoldItalic'), url(http://fonts.gstatic.com/s/playfairdisplay/v10/n7G4PqJvFP2Kubl0VBLDEBZeN5y77JNHCKkhVNuYRJ4.woff2) format('woff2');
-			}
-
-			html,
-			body,
-			#map-canvas {
-				font-family: 'Playfair Display', sans-serif;
-				height: 100%;
-				width: 100%;
-				margin: 1;
-				padding: 1;
-				
-			}
-			#search {
-				right: 10px;
-				position: absolute;
-				top: 5px;
-				z-index: 1;
-			}
-			#error {
-				background: #09060C;
-				border: 3px solid #8B789E;
-				color: #9567C3;
-				right: 50%;
-				margin- right: 80px;
-				padding: 5px;
-				position: absolute;
-				text-align: center;
-				top: 150px;
-				width: 160px;
-				display: none;
-				z-index: 1;
-			}
-
-			#venues {
-				background: #B2B2B2;
-				border: 1px solid #fff;
-				bottom: 19px;
-				max-height: 95%;
-				padding: 0;
-				position: fixed;
-				left: 0;
-				width: 25%;
-				z-index: 1;
-			}
-
-			#venues div {
-				height: 500px;
-				overflow: auto;
-				position: relative;
-				width: 100%;
-			}
-
-			.venues-toggle {
-				height: 35px;
-				overflow: hidden;
-			}
-			.footer {
-				background: #944DDB;
-				bottom: 0;
-				left: 0;
-				position: absolute;
-				left: 0;
-				text-align: center;
-				width: 10%;
-				z-index: 1;
-			}
-
+			#error,#search{position:absolute}#error,.footer{text-align:center}#venues,.footer{left:0;z-index:1}@font-face{font-family:'Playfair Display';font-style:italic;font-weight:400;src:local('Playfair Display Italic'),local('PlayfairDisplay-Italic'),url(http://fonts.gstatic.com/s/playfairdisplay/v10/9MkijrV-dEJ0-_NWV7E6NwXiAI3F8adTt8b-_w2WoPM.woff2) format('woff2')}@font-face{font-family:'Playfair Display';font-style:italic;font-weight:700;src:local('Playfair Display Bold Italic'),local('PlayfairDisplay-BoldItalic'),url(http://fonts.gstatic.com/s/playfairdisplay/v10/n7G4PqJvFP2Kubl0VBLDEBZeN5y77JNHCKkhVNuYRJ4.woff2) format('woff2')}#map-canvas,body,html{font-family:'Playfair Display',sans-serif;height:100%;width:100%;margin:1;padding:1}#search{right:10px;top:5px;z-index:1}#error{background:#09060C;border:3px solid #8B789E;color:#9567C3;right:50%;margin- right:80px;padding:5px;top:150px;width:160px;display:none;z-index:1}#venues{background:#B2B2B2;border:1px solid #fff;bottom:19px;max-height:95%;padding:0;position:fixed;width:25%}#venues div{height:500px;overflow:auto;position:relative;width:100%}.venues-toggle{height:35px;overflow:hidden}.footer{background:#944DDB;bottom:0;position:absolute;width:10%}
 		</style>
 
 	</head>
@@ -134,25 +58,12 @@
 		<div class="footer">
 			<p>Projo5_Udacity</p>
 		</div>
+		
 
 		<script src="js/jquery.min.js"></script>
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTYSjuoZcmdc_12MTieNOK2gmHsdb3PBo"></script>
 		<script async src="js/knockout.js"></script>
 		<script async src="js/app.js"></script>
 
-		<script>
-
-	//	var elt = document.getElementById('optionsTransform');
-	//	var eltImg = document.getElementById('down');
-	//	eltImg.style.transform = "rotate(180deg)";
-	//	$('#venues').addClass('venues-toggle');
-
-	//	elt.addEventListener('click', function() {
-	//	$('#venues').toggleClass('venues-toggle');
-	//	eltImg.style.transform += "rotate(180deg)";
-	//	});
-
-
-		</script>
 	</body>
 </html>

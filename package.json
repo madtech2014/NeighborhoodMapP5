@@ -1,0 +1,29 @@
+{
+  "name": "neighborhoodmapp5",
+  "version": "1.0.0",
+  "description": "neighborhood map app project 5",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/madtech2014/NeighborhoodMapP5.git"
+  },
+  "keywords": [
+    "grunt",
+    "maps",
+    "api",
+    "google",
+    "foursquare"
+  ],
+  "author": "Alfred Richardson Jr.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/madtech2014/NeighborhoodMapP5/issues"
+  },
+  "homepage": "https://github.com/madtech2014/NeighborhoodMapP5#readme",
+  "devDependencies": {
+    "grunt": "^0.4.5"
+  }
+}
