@@ -78,8 +78,8 @@ var ViewModel = function () {
 	 /* Reset marker animations and close any open information windows
 	  * Clicked item gets animated and center map on clicked item
 	  */  
-    self.selectPlace = function(clickedItem) {
- 	self.clearInfoWindows();
+    self.choseLocation = function(clickedItem) {
+ 	self.resetInfoWindows();
 	self.clearMarkerAnimation();
     clickedItem.marker.setAnimation(google.maps.Animation.BOUNCE);
     clickedItem.infowindow.open(self.map, clickedItem.marker);
@@ -103,7 +103,7 @@ var ViewModel = function () {
       self.fsPlaces()[i].marker.setAnimation(null);
     }
   };
-  self.clearInfoWindows = function () {
+  self.resetInfoWindows = function () {
     for (var i = 0; i < self.fsPlaces().length; i++) {
       self.fsPlaces()[i].infowindow.close();
     }
@@ -151,11 +151,11 @@ var ViewModel = function () {
 	*/
    self.city = ko.observable($('#city').val());
    self.setCity = function() {
-    var cityValue = $('#city').val();
+    var cityChoice = $('#city').val();
 
   // 
 
-    self.city(cityValue);
+    self.city(cityChoice);
 
     // Using Google's geocoding API to get the lat/long values for the city entered
     $.getJSON("https://maps.googleapis.com/maps/api/geocode/json?address=" + self.city() + "&key=" + GOOGLE_KEY, function(data) {
@@ -252,7 +252,7 @@ var ViewModel = function () {
 		 */
         google.maps.event.addListener(place.marker, 'click', (function(innerKey) {
           return function() {
-			self.clearInfoWindows(); 
+			self.resetInfoWindows(); 
             self.clearMarkerAnimation();
             self.map.setCenter(new google.maps.LatLng(self.fsPlaces()[innerKey].location.lat, self.fsPlaces()[innerKey].location.lng));
             self.fsPlaces()[innerKey].infowindow.open(self.map, self.fsPlaces()[innerKey].marker);
