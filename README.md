@@ -6,7 +6,7 @@ can be filtered or selected by the user. Selection of a venue either from list g
 markers also supplied by Fourscore via AJAX requests.
 
 Access to Map Application will be via:
-
+	
 	http://htmlpreview.github.io/?https://github.com/madtech2014/NeighborhoodMapP5/blob/master/index.html
 
 
@@ -22,6 +22,7 @@ Web Resouces
 https://developers.google.com/maps/documentation/javascript/tutorial
 https://developers.google.com/maps/documentation/javascript/examples/event-simple
 https://developer.foursquare.com/docs/2014update
+http://knockoutjs.com/documentation/observables.html
 http://www.w3schools.com/googleAPI/google_maps_basic.asp
 http://jshint.com
 http://jsfiddle.net
