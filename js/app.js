@@ -46,7 +46,7 @@ var GOOGLE_KEY = "AIzaSyDTYSjuoZcmdc_12MTieNOK2gmHsdb3PBo";
 var ViewModel = function () {
   var self = this;
     self.map = null;
-    self.fsPlaces = ko.observableArray([]);
+    self.fsVenues = ko.observableArray([]);
 	self.lat = ko.observable(33.9531);
 	self.lng = ko.observable(-83.9925);
 
@@ -65,11 +65,11 @@ var ViewModel = function () {
       }
    });
   // Filter markers based on search term
-    for (var i = 0; i < self.fsPlaces().length; i++) {
-      if (self.fsPlaces()[i].marker.title.search(value) > -1) {
-        self.fsPlaces()[i].marker.setMap(self.map);
+    for (var i = 0; i < self.fsVenues().length; i++) {
+      if (self.fsVenues()[i].marker.title.search(value) > -1) {
+        self.fsVenues()[i].marker.setMap(self.map);
       } else {
-        self.fsPlaces()[i].marker.setMap(null);
+        self.fsVenues()[i].marker.setMap(null);
       }
     }
   };
@@ -78,7 +78,7 @@ var ViewModel = function () {
 	 /* Reset marker animations and close any open information windows
 	  * Clicked item gets animated and center map on clicked item
 	  */  
-    self.selectPlace = function(clickedItem) {
+    self.selectVenue = function(clickedItem) {
  	self.clearInfoWindows();
 	self.clearMarkerAnimation();
     clickedItem.marker.setAnimation(google.maps.Animation.BOUNCE);
@@ -99,13 +99,13 @@ var ViewModel = function () {
   };
 
   self.clearMarkerAnimation = function () {
-    for (var i = 0; i < self.fsPlaces().length; i++) {
-      self.fsPlaces()[i].marker.setAnimation(null);
+    for (var i = 0; i < self.fsVenues().length; i++) {
+      self.fsVenues()[i].marker.setAnimation(null);
     }
   };
   self.clearInfoWindows = function () {
-    for (var i = 0; i < self.fsPlaces().length; i++) {
-      self.fsPlaces()[i].infowindow.close();
+    for (var i = 0; i < self.fsVenues().length; i++) {
+      self.fsVenues()[i].infowindow.close();
     }
   };
   
@@ -158,8 +158,8 @@ var ViewModel = function () {
     self.city(cityValue);
 
     // Using Google's geocoding API to get the lat/long values for the city entered
+	// Request pulls in data, stores the lat longs for the city into the global observables and sets the map center
     $.getJSON("https://maps.googleapis.com/maps/api/geocode/json?address=" + self.city() + "&key=" + GOOGLE_KEY, function(data) {
-      // Request pulls in data, stores the lat longs for the city into the global observables and sets the map center
       self.lat(data.results[0].geometry.location.lat);
       self.lng(data.results[0].geometry.location.lng);
       self.map.setCenter({lat: self.lat(), lng: self.lng()});
@@ -187,76 +187,76 @@ var ViewModel = function () {
       "&client_secret=" + CLIENT_SECRET +
       "&v=20130815&limit=50&categoryId=" + self.chosenCategoryID() +
       "&radius=6000&near=" + self.city(), function(data) {
-      placesModel = data.response.venues;
-      self.fsPlaces(placesModel);
-      console.log("Foursquare places load Successful");
+      venuesModel = data.response.venues;
+      self.fsVenues(venuesModel);
+      console.log("Foursquare venues load Successful");
       setMarkers();
 	  
     $('#error').hide();
     }).error(function() {
-      $('#error').text("Foursquare failed to retrieve places based on current search please refine and retry").show();
+      $('#error').text("Foursquare failed to retrieve venues based on current search please refine and retry").show();
       console.log("Foursquare API failure to load");
     });
 
-   /* Function is used to retrieve and store data in fsPlaces array after sending JSON 
+   /* Function is used to retrieve and store data in fsVenues array after sending JSON 
     *handles missing data items with placeholders
 	*/
     this.setMarkers = function() {
-      for (var i = 0; i < self.fsPlaces().length; i++) {
+      for (var i = 0; i < self.fsVenues().length; i++) {
    
-        var place = self.fsPlaces()[i];
-        var placeAddress = place.location.address;
-        var placeCity = place.location.city;
-        var placeState = place.location.state;
-        var placeZip = place.location.postalCode;
-		var placePhone = place.contact.formattedPhone;
-        var placeWeb = place.url;
+        var venue = self.fsVenues()[i];
+        var venueAddress = venue.location.address;
+        var venueCity = venue.location.city;
+        var venueState = venue.location.state;
+        var venueZip = venue.location.postalCode;
+		var venuePhone = venue.contact.formattedPhone;
+        var venueWeb = venue.url;
         
-        if (placeAddress === undefined) placeAddress = "";
-        if (placeCity === undefined) placeCity = "";
-        if (placeState === undefined) placeState = "";
-        if (placeZip === undefined) placeZip = "";
-		if (placePhone === undefined) placePhone = "N/A";
-        if (placeWeb === undefined) placeWeb = "No Website";
+        if (venueAddress === undefined) venueAddress = "";
+        if (venueCity === undefined) venueCity = "";
+        if (venueState === undefined) venueState = "";
+        if (venueZip === undefined) venueZip = "";
+		if (venuePhone === undefined) venuePhone = "N/A";
+        if (venueWeb === undefined) venueWeb = "No Website";
 
 
-        var fsIconRaw = place.categories[0].icon.prefix + "bg_32" + place.categories[0].icon.suffix;
+        var fsIconRaw = venue.categories[0].icon.prefix + "bg_32" + venue.categories[0].icon.suffix;
         var fsIcon = fsIconRaw.replace("https://ss3.4sqi.net", "https://foursquare.com");
 
-        // Set the markers as properties of the fsPlaces observable
-        place.marker = new google.maps.Marker({
-          position: new google.maps.LatLng(place.location.lat, place.location.lng),
-          title: place.name,
+        // Set the markers as properties of the fsVenues observable
+        venue.marker = new google.maps.Marker({
+          position: new google.maps.LatLng(venue.location.lat, venue.location.lng),
+          title: venue.name,
           map: self.map,
           animation: google.maps.Animation.DROP,
           icon: fsIcon,
           html: '<div>' +
-            '<h2 class="infoTitle">' + place.name +
-            '</h2><h4 class="infoCategory">' + place.categories[0].name +
-            '</h4><p class="infoPhone">Phone: ' + placePhone +
-            '<p class="infoAddress">Address: ' + placeAddress + ' ' + placeCity + ', ' + placeState + ' ' + placeZip +
-            '</p><p class="infoWeb"><a href="' + placeWeb + '">'+
-            '' +  placeWeb + '</a> '+
+            '<h2 class="infoTitle">' + venue.name +
+            '</h2><h4 class="infoCategory">' + venue.categories[0].name +
+            '</h4><p class="infoPhone">Phone: ' + venuePhone +
+            '<p class="infoAddress">Address: ' + venueAddress + ' ' + venueCity + ', ' + venueState + ' ' + venueZip +
+            '</p><p class="infoWeb"><a href="' + venueWeb + '">'+
+            '' +  venueWeb + '</a> '+
             '</p></div>'
         });
 
-        // Set the infowindows as properties of the fsPlaces observable
-        place.infowindow = new google.maps.InfoWindow();
-        place.infowindow.setContent(place.marker.html);
+        // Set the infowindows as properties of the fsVenues observable
+        venue.infowindow = new google.maps.InfoWindow();
+        venue.infowindow.setContent(venue.marker.html);
 
-        /* Utilizing a closure here to add event listeners to each Marker
+        /* Event listeners added to each Marker
 		 * Set the marker to bounce
 		 * Center the map on the new marker
 		 * Open the infowindow.
 		 * Set all other markers animation to null, and close all open infowindows
 		 */
-        google.maps.event.addListener(place.marker, 'click', (function(innerKey) {
+        google.maps.event.addListener(venue.marker, 'click', (function(innerKey) {
           return function() {
 			self.clearInfoWindows(); 
             self.clearMarkerAnimation();
-            self.map.setCenter(new google.maps.LatLng(self.fsPlaces()[innerKey].location.lat, self.fsPlaces()[innerKey].location.lng));
-            self.fsPlaces()[innerKey].infowindow.open(self.map, self.fsPlaces()[innerKey].marker);
-            self.fsPlaces()[innerKey].marker.setAnimation(google.maps.Animation.BOUNCE);
+            self.map.setCenter(new google.maps.LatLng(self.fsVenues()[innerKey].location.lat, self.fsVenues()[innerKey].location.lng));
+            self.fsVenues()[innerKey].infowindow.open(self.map, self.fsVenues()[innerKey].marker);
+            self.fsVenues()[innerKey].marker.setAnimation(google.maps.Animation.BOUNCE);
           };
         })(i));
       }
