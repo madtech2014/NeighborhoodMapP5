@@ -36,3 +36,5 @@ http://jsfiddle.net
 http://gmaps-samples-v3.googlecode.com/svn/trunk/styledmaps/wizard/index.html
 http://gruntjs.com/
 https://nodejs.org/
+http://cssminifier.com/
+http://jscompress.com/
