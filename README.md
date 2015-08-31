@@ -6,9 +6,15 @@ can be filtered or selected by the user. Selection of a venue either from list g
 markers also supplied by Fourscore via AJAX requests.
 
 Access to Map Application will be via:
+
 	Best representation is downloading zip and opening index.html in your favorite browser or for quick view use link:	
 	
 	http://htmlpreview.github.io/?https://github.com/madtech2014/NeighborhoodMapP5/blob/master/index.html
+	
+	Open the Map Options by clicking "up arrow" 
+	Enter City and State in the location box
+	Press "ENTER"
+	Find out what is up in your neighborhood! 
 
 
 Tools and Resources Utilized include:
