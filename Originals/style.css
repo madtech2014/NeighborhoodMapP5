@@ -1,20 +1,21 @@
-html,body,
+html,
+body,
  @font-face {
- font-family: 'Playfair Display';
+ font-family: "Playfair Display";
  font-style: italic;
  font-weight: 400;
- src: local('Playfair Display Italic'), local('PlayfairDisplay-Italic'), url(http://fonts.gstatic.com/s/playfairdisplay/v10/9MkijrV-dEJ0-_NWV7E6NwXiAI3F8adTt8b-_w2WoPM.woff2) format('woff2');
+ src: local("Playfair Display Italic"), local("PlayfairDisplay-Italic"), url(http://fonts.gstatic.com/s/playfairdisplay/v10/9MkijrV-dEJ0-_NWV7E6NwXiAI3F8adTt8b-_w2WoPM.woff2) format('woff2');
  }
  @font-face {
- font-family: 'Playfair Display';
+ font-family: "Playfair Display";
  font-style: italic;
  font-weight: 700;
- src: local('Playfair Display Bold Italic'), local('PlayfairDisplay-BoldItalic'), url(http://fonts.gstatic.com/s/playfairdisplay/v10/n7G4PqJvFP2Kubl0VBLDEBZeN5y77JNHCKkhVNuYRJ4.woff2) format('woff2');
+ src: local("Playfair Display Bold Italic"), local("PlayfairDisplay-BoldItalic"), url(http://fonts.gstatic.com/s/playfairdisplay/v10/n7G4PqJvFP2Kubl0VBLDEBZeN5y77JNHCKkhVNuYRJ4.woff2) format('woff2');
  }
  #map-canvas {
- font-family: 'Playfair Display', sans-serif;
- height: 100%;
- width: 100%;
+ font-family: "Playfair Display", sans-serif;
+ height: 98%;
+ width: 98%;
  margin: 1;
  padding: 1;
 				
@@ -26,9 +27,9 @@ html,body,
  z-index: 1;
  }
  #error {
- background: #09060C;
- border: 3px solid #8B789E;
- color: #9567C3;
+ background: #09060c;
+ border: 3px solid #8b789e;
+ color: #9567c3;
  right: 50%;
  margin- right: 80px;
  padding: 5px;
@@ -41,7 +42,7 @@ html,body,
  }
 
  #venues {
- background: #B2B2B2;
+ background: #b2b2b2;
  border: 1px solid #fff;
  bottom: 19px;
  max-height: 95%;
@@ -64,19 +65,19 @@ html,body,
  overflow: hidden;
  }
  .footer {
- background: #944DDB;
+ background: #944ddb;
  bottom: 0;
  left: 0;
  position: absolute;
  left: 0;
  text-align: center;
- width: 10%;
+ width: 5%;
  z-index: 1;
  }
 
  /* Text */
  h2 {
- background: #4A266E
+ background: #4a266e
  color: #fff;
  margin: 0;
  padding: 3px;
@@ -89,8 +90,8 @@ html,body,
 
  h3 {
  background: #eee;
- border-bottom: 1px solid #6D6D6D;
- color: #B482E6;
+ border-bottom: 1px solid #6d6d6d;
+ color: #b482e6;
  font-weight: 600;
  margin: 0;
  padding: 3px;
@@ -132,7 +133,7 @@ html,body,
 			
  .markerList li:hover,
  .settingsList li:hover {
- background: #4A266E
+ background: #4a266e
  color: #fff;
  cursor: pointer;
  font-weight: bold
@@ -186,7 +187,7 @@ html,body,
  #search input[type=text] {
  font-size: 1em;
  outline: none;
- color: #6D6D6D;
+ color: #6d6d6d;
  margin-left: 5px;
  margin-right: -10px;
  padding: 5px;
@@ -206,7 +207,7 @@ html,body,
  }
 
  .infoTitle {
- background: #341B4D
+ background: #341b4d
  color: #fff;
  font-weight: bold;
  margin-bottom: 5px
@@ -228,7 +229,7 @@ html,body,
 
  }
  .infoWeb a:hover {
- color: #6D6D6D;
+ color: #6d6d6d;
  }
 
  /**Mobilephone-view **/
