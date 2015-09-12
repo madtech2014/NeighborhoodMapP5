@@ -1,0 +1,267 @@
+html,
+body,
+ @font-face {
+	 font-family: "Playfair Display";
+	 font-style: italic;
+	 font-weight: 400;
+	 src: local("Playfair Display Italic"), local("PlayfairDisplay-Italic"), url(http://fonts.gstatic.com/s/playfairdisplay/v10/9MkijrV-dEJ0-_NWV7E6NwXiAI3F8adTt8b-_w2WoPM.woff2) format('woff2');
+ }
+ 
+ @font-face {
+	 font-family: "Playfair Display";
+	 font-style: italic;
+	 font-weight: 700;
+	 src: local("Playfair Display Bold Italic"), local("PlayfairDisplay-BoldItalic"), url(http://fonts.gstatic.com/s/playfairdisplay/v10/n7G4PqJvFP2Kubl0VBLDEBZeN5y77JNHCKkhVNuYRJ4.woff2) format('woff2');
+}
+ 
+ #map-canvas {
+	 font-family: "Playfair Display", sans-serif;
+	 height: 98%;
+	 width: 98%;
+	 margin: 1;
+	 padding: 1;
+ }
+ 
+ #search {
+	 right: 10px;
+	 position: absolute;
+	 top: 5px;
+	 z-index: 1;
+ }
+ 
+ #error {
+	 background: #09060c;
+	 border: 3px solid #8b789e;
+	 color: #9567c3;
+	 right: 50%;
+	 margin- right: 80px;
+	 padding: 5px;
+	 position: absolute;
+	 text-align: center;
+	 top: 150px;
+	 width: 160px;
+	 display: none;
+	 z-index: 1;
+ }
+
+ #venues {
+	 background: #b2b2b2;
+	 border: 1px solid #fff;
+	 bottom: 19px;
+	 max-height: 95%;
+	 padding: 0;
+	 position: fixed;
+	 left: 0;
+	 width: 25%;
+	 z-index: 1;
+ }
+
+ #venues div {
+	 height: 500px;
+	 overflow: auto;
+	 position: relative;
+	 width: 100%;
+ }
+
+ .venues-toggle {
+	 height: 35px;
+	 overflow: hidden;
+ }
+ 
+ .footer {
+	 background: #944ddb;
+	 bottom: 0;
+	 left: 0;
+	 position: absolute;
+	 left: 0;
+	 text-align: center;
+	 width: 5%;
+	 z-index: 1;
+ }
+
+ /* Text */
+ h2 {
+	 background: #4a266e
+	 color: #fff;
+	 margin: 0;
+	 padding: 3px;
+	 text-transform: uppercase
+ }
+
+ h2:hover {
+	
+ }
+
+ h3 {
+	 background: #eee;
+	 border-bottom: 1px solid #6d6d6d;
+	 color: #b482e6;
+	 font-weight: 600;
+	 margin: 0;
+	 padding: 3px;
+ }
+
+ .footer p {
+	 color: #e9e9e9;
+	 font-size: .8em;
+	 margin: 0;
+				
+ }
+ /* Lists */
+
+ .markerList,
+
+ .settingsList {
+	 list-style-type: none;
+	 margin-bottom: 3px;
+	 margin-top: 3px;
+	 padding-left: 0;
+ }
+
+ .markerList li {
+	 color: #222;
+	 margin-top: 2px;
+	 padding: 5px;
+ }
+
+ .settingsList li {
+	 border-right: 2px solid #fff;
+	 display: inline-block;
+	 padding: 0 5px;
+ }
+
+ .settingsList li:last-child {
+ b	
+ }
+			
+ .markerList li:hover,
+ .settingsList li:hover {
+	 background: #4a266e
+	 color: #fff;
+	 cursor: pointer;
+	 font-weight: bold
+ }
+			
+/* Map Options Form */
+ #categoryChoices,
+ #mapArea,
+ #mapSettings {
+ float: right;
+ }
+			
+/* Map options Arrow */
+			
+ h2 img:hover {
+	 cursor: pointer;
+	 -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+	 filter: alpha(opacity=70);
+	 opacity: 0.5
+ }
+ 
+ h2 img {
+	 height 32px;
+	 width 32px;
+	 padding: 1;
+	 margin: 1;
+	 position: absolute;
+	 right: 5px;
+ }
+			
+ label {
+	 border: none;
+	 color: #fff;
+	 margin-left: 10px;
+	 outline: none;
+	 padding: 5px;
+	 background: #4F2A73;
+	 -moz-border-radius: 5px 20px 5px;
+	 -webkit-border-radius: 5px 20px 5px;
+	 border-radius: 5px 20x 5px;				
+ }
+
+ #mapArea {
+	
+ }
+ 
+ #mapArea input[type=text] {
+	
+ }
+
+ #search input[type=text] {
+	 font-size: 1em;
+	 outline: none;
+	 color: #6d6d6d;
+	 margin-left: 5px;
+	 margin-right: -10px;
+	 padding: 5px;
+	 -moz-border-radius: 5px 20px 5px;
+	 -webkit-border-radius: 5px 20px 5px;
+	 border-radius: 5px 20px 5px;
+	 border: 2px solid #ddd;
+ }
+
+ /* InfoWindows styles */
+ .infoTitle,
+ .infoCategory,
+ .infoAddress,
+ .infoPhone,
+ .infoWeb {
+     font-family: "Playfair Display", sans-serif;
+ }
+
+ .infoTitle {
+	 background: #341b4d
+	 color: #fff;
+	 font-weight: bold;
+	 margin-bottom: 5px
+ }
+
+ .infoCategory {
+     margin: 2px 0;
+ }
+
+ .infoAddress {
+     margin: 0;
+ }
+
+ .infoPhone {
+     margin: 0;
+ }
+
+ .infoWeb {
+
+ }
+ .infoWeb a:hover {
+     color: #6d6d6d;
+ }
+
+ /**Mobilephone-view **/
+ @media screen and (max-width: 740px) {
+ #venues {
+     width: 100%;
+ }
+
+ #venues div {
+     height: 72px;
+ }
+
+ #search input[type=text] {
+	 -moz-border-radius: 3px;
+	 -webkit-border-radius: 3px;
+	 border-radius: 3px;
+	 padding: 1px;
+ }
+
+ label {
+	 -moz-border-radius: 3px;
+	 -webkit-border-radius: 3px;
+	 border-radius: 5px;
+	 padding: 1px
+ }
+
+ .markerList li,
+ .settingsList li {
+	 font-size: .9em;
+	 padding: 1px;
+ }
+ }
