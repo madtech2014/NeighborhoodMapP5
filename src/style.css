@@ -72,7 +72,6 @@ body,
 	 background: #944ddb;
 	 bottom: 0;
 	 position: absolute;
-	 left: 0;
 	 text-align: center;
 	 width: 5%;
 	 z-index: 1;
@@ -88,7 +87,10 @@ body,
  }
 
  h2:hover {
-	
+	cursor: pointer;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+	filter: alpha(opacity=80);
+	opacity: 0.8
  }
 
  h3 {
@@ -235,32 +237,32 @@ body,
  }
 
  /**Mobilephone-view **/
- @media screen and (max-width: 740px) {
- #venues {
-     width: 100%;
- }
+@media screen and (max-width: 740px) {
+ #places {
+	width: 100%;
+}
 
- #venues div {
-     height: 72px;
- }
-
- #search input[type=text] {
-	 -moz-border-radius: 3px;
-	 -webkit-border-radius: 3px;
-	 border-radius: 3px;
-	 padding: 1px;
- }
-
- label {
-	 -moz-border-radius: 3px;
-	 -webkit-border-radius: 3px;
-	 border-radius: 5px;
-	 padding: 1px;
- }
+ #places div {
+	height: 75px;
+}
 
  .markerList li,
  .settingsList li {
-	 font-size: .9em;
-	 padding: 1px;
- }
- }
+	font-size: .8em;
+	padding: 2px;
+}
+
+ label {
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	padding: 2px
+}
+
+ #search input[type=text] {
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	padding: 2px;
+}
+}
