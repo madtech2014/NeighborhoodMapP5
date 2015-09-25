@@ -238,12 +238,15 @@ body,
 
  /**Mobilephone-view **/
 @media screen and (max-width: 740px) {
- #places {
-	width: 100%;
+ #venues {
+
+	 width: 100%;
+	 z-index: 1;	
 }
 
- #places div {
+ #venues div {
 	height: 75px;
+	width: 100%;
 }
 
  .markerList li,
