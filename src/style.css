@@ -18,8 +18,8 @@ body,
 	 font-family: "Playfair Display", sans-serif;
 	 height: 98%;
 	 width: 98%;
-	 margin: 1;
-	 padding: 1;
+	 margin: 1px;
+	 padding: 1px;
  }
  
  #search {
@@ -71,7 +71,6 @@ body,
  .footer {
 	 background: #944ddb;
 	 bottom: 0;
-	 left: 0;
 	 position: absolute;
 	 text-align: center;
 	 width: 5%;
@@ -239,12 +238,15 @@ body,
 
  /**Mobilephone-view **/
 @media screen and (max-width: 740px) {
- #places {
-	width: 100%;
+ #venues {
+
+	 width: 100%;
+	 z-index: 1;	
 }
 
- #places div {
+ #venues div {
 	height: 75px;
+	width: 100%;
 }
 
  .markerList li,
