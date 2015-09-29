@@ -1,5 +1,4 @@
-html,
-body,
+
  @font-face {
 	 font-family: "Playfair Display";
 	 font-style: italic;
@@ -12,8 +11,11 @@ body,
 	 font-style: italic;
 	 font-weight: 700;
 	 src: local("Playfair Display Bold Italic"), local("PlayfairDisplay-BoldItalic"), url(http://fonts.gstatic.com/s/playfairdisplay/v10/n7G4PqJvFP2Kubl0VBLDEBZeN5y77JNHCKkhVNuYRJ4.woff2) format('woff2');
-}
+ }
  
+html,
+body,
+
  #map-canvas {
 	 font-family: "Playfair Display", sans-serif;
 	 height: 98%;
@@ -34,7 +36,7 @@ body,
 	 border: 3px solid #8b789e;
 	 color: #9567c3;
 	 right: 50%;
-	 margin- right: 80px;
+	 margin-right: 80px;
 	 padding: 5px;
 	 position: absolute;
 	 text-align: center;
@@ -79,7 +81,7 @@ body,
 
  /* Text */
  h2 {
-	 background: #4a266e
+	 background: #4a266e;
 	 color: #fff;
 	 margin: 0;
 	 padding: 3px;
@@ -88,9 +90,6 @@ body,
 
  h2:hover {
 	cursor: pointer;
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
-	filter: alpha(opacity=80);
-	opacity: 0.8
  }
 
  h3 {
@@ -144,28 +143,28 @@ body,
  }
 			
 /* Map Options Form */
- #categoryChoices,
- #mapArea,
- #mapSettings {
- float: right;
+  #categoryChoices,
+  #mapArea,
+  #mapSettings {
+  float: left;
  }
 			
 /* Map options Arrow */
-			
+
  h2 img:hover {
-	 cursor: pointer;
-	 -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
-	 filter: alpha(opacity=70);
-	 opacity: 0.5;
+	cursor: pointer;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha (Opacity=70)";
+	opacity: 0.7;
+	filter: alpha(opacity=70);
  }
  
  h2 img {
-	 height 32px;
-	 width 32px;
-	 padding: 1;
-	 margin: 1;
+	 height: 32px;
+	 width: 32px;
+	 padding: 1px;
+	 margin: 1px;
 	 position: absolute;
-	 right: 5px;
+	 float: right;
  }
 			
  label {
@@ -177,7 +176,7 @@ body,
 	 background: #4F2A73;
 	 -moz-border-radius: 5px 20px 5px;
 	 -webkit-border-radius: 5px 20px 5px;
-	 border-radius: 5px 20x 5px;				
+	 border-radius: 5px 20px 5px;				
  }
 
  #mapArea {
@@ -237,35 +236,35 @@ body,
  }
 
  /**Mobilephone-view **/
-@media screen and (max-width: 740px) {
+ @media screen and (max-width: 740px) {
  #venues {
 
 	 width: 100%;
 	 z-index: 1;	
-}
+ }
 
  #venues div {
 	height: 75px;
 	width: 100%;
-}
+ }
 
  .markerList li,
  .settingsList li {
 	font-size: .8em;
 	padding: 2px;
-}
+ }
 
  label {
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
 	padding: 2px
-}
+ }
 
  #search input[type=text] {
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
 	padding: 2px;
-}
+ }
 }
