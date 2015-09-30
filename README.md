@@ -13,7 +13,7 @@ Access to Map Application will be via:
 	
 	http://htmlpreview.github.io/?https://github.com/madtech2014/NeighborhoodMapP5/blob/master/index.html
 	
-	Open the Map Options by clicking "up arrow" 
+	Open the Map Options by clicking in "Map Options" box with the "up arrow"
 	Enter City and State in the location box
 	Press "ENTER"
 	Find out what is up in your neighborhood! 
