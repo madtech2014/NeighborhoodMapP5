@@ -119,6 +119,7 @@ var ViewModel = function() {
         eltImg.style.transform += "rotate(180deg)";
     });
 
+
     //CATEGORIES
     /*Catagory function used to create an array of all category IDs to be passed into JSON request by CSV string.  
      *Category choices stored in selection options ID and choice name in drop down to be displayed in DOM
@@ -183,7 +184,7 @@ var ViewModel = function() {
      * This function, within the request, allows the data to be used outside this scope.
      * Error handling if the Foursquare service is unreachable or if the user types in an unrecognizable search term.
      */
-    self.initializeMap = function() {
+     self.initializeMap = function() {
         // Foursquare AJAX request for places
         $.getJSON("https://api.foursquare.com/v2/venues/search?client_id=" + CLIENT_ID +
             "&client_secret=" + CLIENT_SECRET +
@@ -303,6 +304,7 @@ var ViewModel = function() {
                 "color": "##FFC39C"
             }]
         }]
+		
         var mapOptions = {
             center: {
                 lat: self.lat(),
@@ -332,6 +334,7 @@ var ViewModel = function() {
         $('#error').hide();
         google.maps.event.addDomListener(window, 'load', this.initializeMap);
         console.log("Google Maps Successfully loaded");
+
     }
 };
 
