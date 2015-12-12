@@ -48,7 +48,8 @@ function initMap() {
                 lat: 33.9531,
                 lng: -83.9925
             },
-            zoom: 14
+            zoom: 14,
+			disableDefaultUI: true
         });
         //start viewModel now 
         ko.applyBindings(new ViewModel());
