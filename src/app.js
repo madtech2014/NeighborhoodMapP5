@@ -40,7 +40,6 @@ var fsCategories = [{
 }];
 //Intialize map
 var map;
-
 function initMap() {
         "use strict";
         map = new google.maps.Map(document.getElementById('map-canvas'), {
@@ -56,13 +55,14 @@ function initMap() {
     }
     // MAPVIEW
     //Make map global, set default location(Lawrenceville, GA), define an array for Ajax/json requests
-var ViewModel = function() {
+	var ViewModel = function() {
     var self = this;
     self.map = null;
     self.fsVenues = ko.observableArray([]);
     self.lat = ko.observable(33.9531);
     self.lng = ko.observable(-83.9925);
-    // SEARCH
+
+	 // SEARCH
     self.search = function() {
 		"use strict";
         var value = $('#searchTerm').val();
@@ -83,9 +83,10 @@ var ViewModel = function() {
                 self.fsVenues()[i].marker.setMap(self.map);
             } else {
                 self.fsVenues()[i].marker.setMap(null);
-            }
+          }
         }
     };
+	
     // LIST VIEW 
     /* Reset marker animations and close any open information windows
      * Clicked item gets animated and center map on clicked item
